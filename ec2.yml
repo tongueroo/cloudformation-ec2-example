@@ -67,12 +67,3 @@ Resources:
         FromPort: 22
         IpProtocol: tcp
         ToPort: 22
-Outputs:
-  Instance:
-    Value:
-      Ref: Instance
-  SecurityGroup:
-    Value:
-      Fn::GetAtt:
-      - SecurityGroup
-      - GroupId
