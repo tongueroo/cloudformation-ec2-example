@@ -58,6 +58,13 @@ Resources:
       - Fn::GetAtt:
         - SecurityGroup
         - GroupId
+      UserData:
+        Fn::Base64:
+          Fn::Sub:
+          - |
+            #!/bin/bash
+            /opt/aws/bin/cfn-init -v --stack ${AWS::StackName} --resource Instance --region ${AWS::Region}
+          - {}
   SecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
