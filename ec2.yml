@@ -54,6 +54,7 @@ Resources:
         Ref: InstanceType
       KeyName:
         Ref: KeyName
+      Monitoring: true
       SecurityGroupIds:
       - Fn::GetAtt:
         - SecurityGroup
